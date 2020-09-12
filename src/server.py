@@ -5,15 +5,24 @@ import SimpleXMLRPCServer
 import sys
 
 from lib import validate_cpf
-from settings import HOST, USER, PASSWORD, DBNAME, PORT, SERVER_PORT
+from settings import HOST, DB_USER, PASSWORD, DBNAME, PORT, SERVER_PORT
 
 try:
     conn = psycopg2.connect(
-        user = USER,
+        user = DB_USER,
         password = PASSWORD,
         host = HOST,
         port = PORT,
         dbname = DBNAME)
+
+    cursor = connection.cursor()
+
+    query = "SELECT nome FROM autor LIMIT 10;"
+
+    records = cursor.fetchall()
+
+    for row in records:
+        print(row[0])
     
     print "The Server was Started"
 
@@ -22,3 +31,8 @@ try:
     server.serve_forever()
 except:
     print("Failed to connect to the database")
+finally:
+    if(connection):
+        cursor.close()
+        connection.close()
+        print("PostgreSQL connection is closed")
