@@ -1,8 +1,9 @@
-import xmlrpclib
 import sys
+import xmlrpc.client
 
 from settings import IP, SERVER_PORT
 
-server = xmlrpclib.ServerProxy('http://' + IP + ':'+ SERVER_PORT)
+with xmlrpc.client.ServerProxy(('http://' + IP + ':'+ SERVER_PORT), allow_none=True) as proxy:
 
-## print str(server.validate_cpf("03661861085"))
+    ## proxy.insert_book(10006, 'The Stand') 
+    proxy.delete_book('The Stand')

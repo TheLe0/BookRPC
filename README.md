@@ -59,11 +59,11 @@ python3 client.py
 
 ## ENDPOINTS ##
 
-- [ ] Create a book, return a boolean
+- [OK] Create a book, return a boolean
 - [ ] Find a book by name(complete and with like)
 - [ ] List an author's books(complete and with like)
 - [ ] List books per year and edition number 
-- [ ] Remove a book by the name(complete), return a boolean
+- [OK] Remove a book by the name(complete), return a boolean
 - [ ] Edit a book by name(complete), edition and year, return a boolean 
 
 #### Note ####

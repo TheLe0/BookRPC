@@ -1,11 +1,18 @@
 import re
-import SimpleXMLRPCServer
 import sys
 
-from lib import insert
+from lib import insert_book, delete_book
 from settings import HOST, SERVER_PORT
+from xmlrpc.server import SimpleXMLRPCServer
 
-server = SimpleXMLRPCServer.SimpleXMLRPCServer((HOST, int(SERVER_PORT)))
-server.register_function(insert, "insert")
-server.serve_forever()
+with SimpleXMLRPCServer((HOST, int(SERVER_PORT))) as server:
+
+    server.register_function(insert_book, "insert_book")
+    server.register_function(delete_book, "delete_book")
+    try:
+        print("The server was started!")
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nServer shutdown by keyboard exit!")
+        sys.exit(0)
 

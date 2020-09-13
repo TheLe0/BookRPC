@@ -16,7 +16,7 @@ def connect_db():
     
     return conn
 
-def insert(code, name):
+def insert_book(code, name):
 
     conn = connect_db()
 
@@ -33,4 +33,29 @@ def insert(code, name):
         cursor.close()
         conn.close()
     
-    return True if count > 0 else False
+    if (count > 0):
+        print(str(count)+" registro adicionado com sucesso")
+    else:
+        print("Erro ao adicionar o registro")
+
+def delete_book(name):
+
+    conn = connect_db()
+
+    cursor = conn.cursor() 
+
+    query = "DELETE FROM livros WHERE TITULO = '"+name+"';"
+
+    cursor.execute(query)
+
+    conn.commit()
+    count = cursor.rowcount 
+
+    if(conn):
+        cursor.close()
+        conn.close()
+
+    if (count > 0):
+        print(str(count)+" registro removido com sucesso")
+    else:
+        print("Erro ao remover o registro")  
