@@ -87,4 +87,30 @@ def find_book(name):
 
     return str_list
 
+def list_books_by_author(name):
+
+    conn = connect_db()
+
+    cursor = conn.cursor()
+
+    query = "SELECT  L.codigo,  L.titulo FROM livros L INNER JOIN livroautor LA on LA.codigolivro = L.codigo INNER JOIN autor A on LA.codigoautor = A.codigo WHERE A.nome like '"+name+"';"
+
+    cursor.execute(query)
+    records = cursor.fetchall()
+
+    str_list = ''
+    count = cursor.rowcount
+
+    if(conn):
+        cursor.close()
+        conn.close()
+
+    str_list = "CODE  -  NAME\n"
+    for row in records:
+        str_list += ""+str(row[0])+" - "+row[1]+" \n"
+    
+    if (count == 0):
+        str_list = "No book found!"
+
+    return str_list
 
