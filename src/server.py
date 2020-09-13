@@ -1,7 +1,7 @@
 import re
 import sys
 
-from lib import insert_book, delete_book, find_book, list_books_by_author
+from lib import insert_book, delete_book, find_book, list_books_by_author, list_books_per_year_edition
 from settings import HOST, SERVER_PORT
 from xmlrpc.server import SimpleXMLRPCServer
 
@@ -11,6 +11,7 @@ with SimpleXMLRPCServer((HOST, int(SERVER_PORT))) as server:
     server.register_function(delete_book, "delete_book")
     server.register_function(find_book, "find_book")
     server.register_function(list_books_by_author, "list_books_by_author")
+    server.register_function(list_books_per_year_edition, "list_books_per_year_edition")
 
     try:
         print("The server was started!")

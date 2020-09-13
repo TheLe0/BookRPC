@@ -114,3 +114,29 @@ def list_books_by_author(name):
 
     return str_list
 
+def list_books_per_year_edition(year, edition):
+
+    conn = connect_db()
+
+    cursor = conn.cursor()
+
+    query = "SELECT L.codigo,  L.titulo FROM livros L INNER JOIN edicao E ON E.codigolivro = L.codigo WHERE E.ano = "+str(year)+" AND E.numero like '"+edition+"';"
+
+    cursor.execute(query)
+    records = cursor.fetchall()
+
+    str_list = ''
+    count = cursor.rowcount
+
+    if(conn):
+        cursor.close()
+        conn.close()
+
+    str_list = "CODE  -  NAME\n"
+    for row in records:
+        str_list += ""+str(row[0])+" - "+row[1]+" \n"
+    
+    if (count == 0):
+        str_list = "No book found!"
+
+    return str_list
