@@ -34,9 +34,9 @@ def insert_book(code, name):
         conn.close()
     
     if (count > 0):
-        print(str(count)+" registro adicionado com sucesso")
+        return str(count)+" registro adicionado com sucesso"
     else:
-        print("Erro ao adicionar o registro")
+        return "Erro ao adicionar o registro"
 
 def delete_book(name):
 
@@ -56,6 +56,35 @@ def delete_book(name):
         conn.close()
 
     if (count > 0):
-        print(str(count)+" registro removido com sucesso")
+        return str(count)+" registro removido com sucesso"
     else:
-        print("Erro ao remover o registro")  
+        return "Erro ao remover o registro"
+
+def find_book(name):
+
+    conn = connect_db()
+
+    cursor = conn.cursor()
+
+    query = "SELECT codigo, titulo FROM livros where titulo like '"+name+"';"
+
+    cursor.execute(query)
+    records = cursor.fetchall()
+
+    str_list = ''
+    count = cursor.rowcount
+
+    if(conn):
+        cursor.close()
+        conn.close()
+
+    str_list = "CODE  -  NAME\n"
+    for row in records:
+        str_list += ""+str(row[0])+" - "+row[1]+" \n"
+    
+    if (count == 0):
+        str_list = "No book found!"
+
+    return str_list
+
+

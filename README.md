@@ -60,7 +60,7 @@ python3 client.py
 ## ENDPOINTS ##
 
 - [OK] Create a book, return a boolean
-- [ ] Find a book by name(complete and with like)
+- [OK] Find a book by name(complete and with like)
 - [ ] List an author's books(complete and with like)
 - [ ] List books per year and edition number 
 - [OK] Remove a book by the name(complete), return a boolean
