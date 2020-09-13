@@ -1,29 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.17
--- Dumped by pg_dump version 9.6.17
-
--- Started on 2020-05-06 11:44:25 PDT
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 2180 (class 0 OID 19315)
--- Dependencies: 190
--- Data for Name: livros; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 INSERT INTO public.livros (codigo, titulo) VALUES (1, 'Chess, move by move                          ');
 INSERT INTO public.livros (codigo, titulo) VALUES (2, 'Marishka                                     ');
 INSERT INTO public.livros (codigo, titulo) VALUES (3, 'A jury of her peers                          ');
@@ -10023,11 +9997,3 @@ INSERT INTO public.livros (codigo, titulo) VALUES (9996, 'Physico-chemical const
 INSERT INTO public.livros (codigo, titulo) VALUES (9997, 'Planning learning programs in secondary schoo');
 INSERT INTO public.livros (codigo, titulo) VALUES (9998, 'Absolute Algebra                             ');
 INSERT INTO public.livros (codigo, titulo) VALUES (9999, 'The album                                    ');
-
-
--- Completed on 2020-05-06 11:44:25 PDT
-
---
--- PostgreSQL database dump complete
---
-

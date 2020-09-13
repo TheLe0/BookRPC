@@ -42,5 +42,3 @@ CREATE TABLE livrostemp
   ano integer NOT NULL,
   CONSTRAINT livrostemp_pkey PRIMARY KEY (codigo)
 );
-
-

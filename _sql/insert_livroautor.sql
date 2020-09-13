@@ -1,29 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.17
--- Dumped by pg_dump version 9.6.17
-
--- Started on 2020-05-06 11:45:27 PDT
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 2180 (class 0 OID 19326)
--- Dependencies: 193
--- Data for Name: livroautor; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 INSERT INTO public.livroautor (codigolivro, codigoautor) VALUES (1, 1);
 INSERT INTO public.livroautor (codigolivro, codigoautor) VALUES (2, 2);
 INSERT INTO public.livroautor (codigolivro, codigoautor) VALUES (3, 3);
@@ -10035,11 +10009,3 @@ INSERT INTO public.livroautor (codigolivro, codigoautor) VALUES (9835, 9996);
 INSERT INTO public.livroautor (codigolivro, codigoautor) VALUES (9836, 9997);
 INSERT INTO public.livroautor (codigolivro, codigoautor) VALUES (9837, 9998);
 INSERT INTO public.livroautor (codigolivro, codigoautor) VALUES (9838, 9999);
-
-
--- Completed on 2020-05-06 11:45:27 PDT
-
---
--- PostgreSQL database dump complete
---
-

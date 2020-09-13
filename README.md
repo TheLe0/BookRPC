@@ -1,25 +1,71 @@
-Universidade de Caxias do Sul
 
-Área de Ciências Exatas e Engenharias
+## INTRODUCTION ##
 
-Cidade Universitária / Campus Universitário da Região dos Vinhedos
+Build an application clint-server that comunicates with each other by RPC(Remote procedure call), is
+like a REST API, but building everything without framework ore broker.
 
-Disciplina: CIC4004 – Programação Concorrente, Paralela e Distribuída
+## SPECIFICATIONS ##
 
-Professores: André Martinotto e Daniel Notari
+The client will only get from the user the operations and parameters to do the call. And
+the server will receive, do all the necessaries
+business rules and send to the database and send to the client the response.
 
-Especificação do Trabalho I – 2020-4
+## REQUIREMENTS ##
 
-O trabalho consiste no desenvolvimento de um programa servidor que implemente um Sistema de Consulta de Livros, sendo acessado via Sockets e via RPC (RMI). Os dados estão organizados em um arquivo SQL gerado através do SGBDR PostgreSQL. A estrutura dos dados envolve: Código do livro, Título do livro, Autor do livro, Edição do livro e Ano de Publicação. As informações dos livros deverão ser persistidas em arquivos ou em um banco de dados.
+```
+Python 3
+PostgreSQL 12
+```
 
-As operações possíveis são:
+## INSTALLATION ##
 
--[ ] Criar livro: recebe como parâmetro as informação do livro e retorna se foi possível inserir o livro ou uma mensagem de erro;
--[ ] Consultar livro: deverá permitir consultas pelo; 
-        - [ ]nome do autor (completo e parcial); 
-        - [ ] título do livro (completo e parcial);
- No caso de consultas pelo nome parcial, deverá retornar todos os livros que atendam a consultam em ordem alfabética pelo nome. Caso o contato não exista, imprima uma mensagem de erro.
--[ ] Consultar por ano e número da edição: deverá retornar o nome de todos os livros em ordem alfabética pelo nome.
--[ ] Remover livro: deve permitir a remoção do livro através do título completo. Caso o contato não exista, imprima uma mensagem de erro.
--[ ] Alteração do Livro: deverá permitir alterações por nome e título completo do livro, edição e ano de publicação. Caso o contato não exista, imprima uma mensagem de erro.
+On the postgreSQL terminal(ore in a postgre client like pgAdmin) run:
+
+```
+psql -f create_database.sql
+psql -f create_tables.sql
+psql -f insert_livros.sql
+psql -f insert_autor.sql
+psql -f insert_edicao.sql
+psql -f insert_livroautor.sql
+psql -f insert_livrostemp.sql
+```
+
+On the project root create a file called ``` .env ```, like the ```.env-example```. And put your values for the variables, something like this:
+
+```
+HOST=localhost
+DB_USER=my_user
+PASSWORD=my_password
+PORT=5434
+DBNAME=BookStorage
+SERVER_PORT=1027
+IP=127.0.0.1
+```
+
+Inside the project root on the terminal run:
+```
+pip3 install -r requirements.txt
+```
+Start the server:
+```
+ python3 server.py
+```
+
+Start the client:
+```
+python3 client.py
+```
+
+## ENDPOINTS ##
+
+- [ ] Create a book, return a boolean
+- [ ] Find a book by name(complete and with like)
+- [ ] List an author's books(complete and with like)
+- [ ] List books per year and edition number 
+- [ ] Remove a book by the name(complete), return a boolean
+- [ ] Edit a book by name(complete), edition and year, return a boolean 
+
+#### Note ####
+* If the list/find doesn't find anything, return a error message
 

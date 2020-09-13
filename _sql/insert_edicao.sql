@@ -1,29 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.17
--- Dumped by pg_dump version 9.6.17
-
--- Started on 2020-05-06 11:44:58 PDT
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 2180 (class 0 OID 19322)
--- Dependencies: 192
--- Data for Name: edicao; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 INSERT INTO public.edicao (codigolivro, numero, ano) VALUES (1, '1', 2013);
 INSERT INTO public.edicao (codigolivro, numero, ano) VALUES (2, '1', 2013);
 INSERT INTO public.edicao (codigolivro, numero, ano) VALUES (3, '9', 2013);
@@ -11535,11 +11509,3 @@ INSERT INTO public.edicao (codigolivro, numero, ano) VALUES (2263, '3', 2013);
 INSERT INTO public.edicao (codigolivro, numero, ano) VALUES (103, '1', 2013);
 INSERT INTO public.edicao (codigolivro, numero, ano) VALUES (103, '2', 2013);
 INSERT INTO public.edicao (codigolivro, numero, ano) VALUES (123, '1', 2123);
-
-
--- Completed on 2020-05-06 11:44:59 PDT
-
---
--- PostgreSQL database dump complete
---
-

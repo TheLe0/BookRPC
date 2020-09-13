@@ -1,29 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.17
--- Dumped by pg_dump version 9.6.17
-
--- Started on 2020-05-06 11:43:51 PDT
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 2180 (class 0 OID 19319)
--- Dependencies: 191
--- Data for Name: autor; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 INSERT INTO public.autor (codigo, nome) VALUES (1, 'S. V. Cakasranau0304mam       ');
 INSERT INTO public.autor (codigo, nome) VALUES (2, 'James Thomson                 ');
 INSERT INTO public.autor (codigo, nome) VALUES (3, 'Maruyama, Kou0304ichi         ');
@@ -10023,11 +9997,3 @@ INSERT INTO public.autor (codigo, nome) VALUES (9996, 'NMPC''05 (2005 Freudensta
 INSERT INTO public.autor (codigo, nome) VALUES (9997, 'K. N. Vandrachek              ');
 INSERT INTO public.autor (codigo, nome) VALUES (9998, 'Jo-Ann Johnston               ');
 INSERT INTO public.autor (codigo, nome) VALUES (9999, 'HESHAM OSMAN                  ');
-
-
--- Completed on 2020-05-06 11:43:51 PDT
-
---
--- PostgreSQL database dump complete
---
-

@@ -1,29 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.17
--- Dumped by pg_dump version 9.6.17
-
--- Started on 2020-05-06 11:58:34 PDT
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 2180 (class 0 OID 19344)
--- Dependencies: 194
--- Data for Name: livrostemp; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 INSERT INTO public.livrostemp (codigo, titulo, autor, edicao, ano) VALUES (1, 'Chess, move by move                          ', 'S. V. Cakasranau0304mam       ', '1', 2013);
 INSERT INTO public.livrostemp (codigo, titulo, autor, edicao, ano) VALUES (2, 'Marishka                                     ', 'James Thomson                 ', '1', 2013);
 INSERT INTO public.livrostemp (codigo, titulo, autor, edicao, ano) VALUES (3, 'A jury of her peers                          ', 'Maruyama, Kou0304ichi         ', '9', 2013);
@@ -1023,11 +997,3 @@ INSERT INTO public.livrostemp (codigo, titulo, autor, edicao, ano) VALUES (996, 
 INSERT INTO public.livrostemp (codigo, titulo, autor, edicao, ano) VALUES (997, 'Tessa Snaps Snakes (A Little Ark Book)       ', 'Evelyne.* Corcos              ', '2', 2013);
 INSERT INTO public.livrostemp (codigo, titulo, autor, edicao, ano) VALUES (998, 'Crashing and Splashing (Little Ark Book (Sydn', 'European Science Education Res', '3', 2013);
 INSERT INTO public.livrostemp (codigo, titulo, autor, edicao, ano) VALUES (999, 'Ruby                                         ', 'Christian Rou0308ckle         ', '6', 2013);
-
-
--- Completed on 2020-05-06 11:58:34 PDT
-
---
--- PostgreSQL database dump complete
---
-
