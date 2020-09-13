@@ -140,3 +140,21 @@ def list_books_per_year_edition(year, edition):
         str_list = "No book found!"
 
     return str_list
+
+def update_book(old_name, new_name, year, edition):
+
+    conn = connect_db()
+
+    cursor = conn.cursor()
+
+    query = "UPDATE livros AS L SET titulo = '"+new_name+"' FROM edicao AS E WHERE E.codigolivro = L.codigo AND L.titulo LIKE '"+old_name+"' AND E.numero = '"+edition+"' AND E.ano = "+str(year)+";"
+
+    cursor.execute(query)
+    conn.commit()
+
+    count = cursor.rowcount
+
+    if(count > 0):
+        return ""+str(count)+" registro atualizado"
+    else:
+        return "Nenhum registro encontrado"

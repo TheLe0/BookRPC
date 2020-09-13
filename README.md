@@ -64,7 +64,7 @@ python3 client.py
 - [OK] List an author's books(complete and with like)
 - [OK] List books per year and edition number 
 - [OK] Remove a book by the name(complete), return a boolean
-- [ ] Edit a book by name(complete), edition and year, return a boolean 
+- [OK] Edit a book by name(complete), edition and year, return a boolean 
 
 #### Note ####
 * If the list/find doesn't find anything, return a error message
