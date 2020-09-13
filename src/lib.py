@@ -1,23 +1,36 @@
-def validate_cpf(cpf):
+import psycopg2
 
-    cpf = ''.join(re.findall('\d', str(cpf)))
+from settings import HOST, DB_USER, PASSWORD, DBNAME, PORT, SERVER_PORT
+
+def connect_db():
+
+    try:
+        conn = psycopg2.connect(
+            user = DB_USER,
+            password = PASSWORD,
+            host = HOST,
+            port = PORT,
+            dbname = DBNAME)
+    except:
+        print("Failed to connect to the database")
     
-    if (not cpf) or (len(cpf) < 11):
-        return False
+    return conn
 
-    integers = map(int, cpf)
-    new = integers[:9]
+def insert(code, name):
 
-    while len(new) < 11:
-        r = sum([(len(new)+1-i)*v for i,v in enumerate(new)]) % 11
+    conn = connect_db()
 
-        if r > 1:
-            f = 11 - r
-        else:
-            f = 0
-        new.append(f)
+    cursor = conn.cursor()
 
-    if new == integers:
-        return True
+    query = "INSERT INTO livros (codigo, titulo) VALUES ("+str(code)+",'"+name+"');" 
+
+    cursor.execute(query)
+	
+    conn.commit()
+    count = cursor.rowcount
     
-    return False
+    if(conn):
+        cursor.close()
+        conn.close()
+    
+    return True if count > 0 else False
