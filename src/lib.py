@@ -44,12 +44,19 @@ def delete_book(name):
 
     cursor = conn.cursor() 
 
-    query = "DELETE FROM livros WHERE TITULO = '"+name+"';"
+    query = "DELETE FROM edicao WHERE codigolivro IN (SELECT codigo FROM livros where titulo like '%"+name+"%');"
 
     cursor.execute(query)
 
+    query = "DELETE FROM livroautor WHERE codigolivro IN (SELECT codigo from livros where titulo like '%"+name+"%');"
+
+    cursor.execute(query)
+
+    query = "DELETE FROM livros WHERE titulo like '%"+name+"%';"
+
+    count = cursor.rowcount
+
     conn.commit()
-    count = cursor.rowcount 
 
     if(conn):
         cursor.close()
