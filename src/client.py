@@ -6,8 +6,8 @@ from settings import IP, SERVER_PORT
 with xmlrpc.client.ServerProxy(('http://' + IP + ':'+ SERVER_PORT), allow_none=True) as proxy:
 
     try:
-        ## print(proxy.insert_book(10006, 'The Stand'))
-        ## print(proxy.delete_book('The Outsider'))
+        ## print(proxy.insert_book(10002, 'The Data warehouse Toolkit'))
+        ## print(proxy.delete_book_by_name('The Data warehouse Toolkit'))
         ## print(proxy.find_book('%Dark Tales'))
         ## print(proxy.list_books_by_author('Roberto Nogueira%'))
         ## print(proxy.list_books_per_year_edition(2013, '1'))
