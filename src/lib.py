@@ -67,6 +67,29 @@ def delete_book(name):
     else:
         return "Erro ao remover o registro"
 
+def delete_book_by_name(name):
+
+    conn = connect_db()
+
+    cursor = conn.cursor()
+       
+    query = "DELETE FROM livros WHERE titulo = '"+name+"';"
+
+    cursor.execute(query)
+
+    count = cursor.rowcount
+
+    conn.commit()
+
+    if(conn):
+        cursor.close()
+        conn.close()
+
+    if (count > 0):
+        return str(count)+" registro removido com sucesso"
+    else:
+        return "Erro ao remover o registro"
+
 def find_book(name):
 
     conn = connect_db()
